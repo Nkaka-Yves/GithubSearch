@@ -1,0 +1,40 @@
+img {
+    border-radius: 20%;
+}
+
+#look {
+    padding-left: 150px;
+    margin-top: 60px;
+}
+
+.head {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.username {
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
+}
+
+#fa {
+    color: green;
+}
+
+.user-login {
+    font-size: 20px;
+}
+
+.nkak {
+    margin-top: 40px;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    background: rgb(252, 252, 252);
+}
+
+.btn a {
+    color: ivory;
+    text-decoration: none;
+}
