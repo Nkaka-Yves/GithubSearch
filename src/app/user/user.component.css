@@ -1,11 +1,10 @@
 img {
     border-radius: 20%;
+    height: 20rem;
+    width: 20rem;
 }
 
-#look {
-    padding-left: 150px;
-    margin-top: 60px;
-}
+
 
 .head {
     margin-top: 90px;
@@ -14,12 +13,11 @@ img {
 
 .username {
     font-size: 40px;
-    font-weight: bold;
-    color: green;
+    color: rgb(255, 255, 255);
 }
 
 #fa {
-    color: green;
+    color: rgb(252, 253, 252);
 }
 
 .user-login {
@@ -28,13 +26,18 @@ img {
 
 .nkak {
     margin-top: 40px;
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px 8px 10px #888888;
-    background: rgb(252, 252, 252);
+    padding: 5px;
+    box-shadow: 5px 10px 8px 10px #c44902;
+    background: rgba(207, 84, 36, 0.671);
 }
 
 .btn a {
     color: ivory;
     text-decoration: none;
+}
+.card-n{
+    background-color: #c4490293; 
+}
+.card-n:hover{
+    background-color: #c44902;
 }
