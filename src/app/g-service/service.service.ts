@@ -1,24 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Repos } from './repos';
-import { UserInfo } from './user-info';
-import { environment } from '../environments/environment';
-
+import { environment } from 'src/environments/environment';
+import { Repos } from '../repos';
+import { UserInfo } from '../user-info';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GserviceService {
-  searchUser: UserInfo;
-  repository: Repos;
-
+export class ServiceService {
+  findUser: UserInfo;
+  repos: Repos;
   constructor(private http: HttpClient) {
-    this.searchUser = new UserInfo('', '', '', 0, 0, 0, '', new Date(), '');
-    this.repository = new Repos('', '', '', '', new Date());
-
+    this.findUser = new UserInfo('', '', '', 0, 0, 0, '', new Date(), '');
+    this.repos = new Repos('', '', '', '', new Date());
   }
 
-  findUser(searchUser: string) {
+  findUsers(searchUsername: string) {
     interface apiResponse {
       name: string;
       login: string;
@@ -28,21 +25,20 @@ export class GserviceService {
       following: number;
       avatar_url: string;
       created_at: Date;
-      html_url: string;
-
+      html_url: string,
     }
     return new Promise((resolve, reject) => {
       this.http
         .get<apiResponse>(
           'https://api.github.com/users/' +
-          searchUser +
-          '?access_token=' +
-          environment.Key
+            searchUsername +
+            '?access_token=' +
+            environment.Key
         )
         .toPromise()
         .then(
           (response) => {
-            this.searchUser = response;
+            this.findUser = response;
             console.log(this.findUser);
             resolve();
           },
@@ -54,7 +50,7 @@ export class GserviceService {
     });
   }
 
-  getRepository(findRepo: string) {
+  getRepository(searchRepo: string) {
     interface apiResponse {
       name: string;
       description: string;
@@ -67,15 +63,15 @@ export class GserviceService {
       this.http
         .get<apiResponse>(
           'https://api.github.com/users/' +
-          findRepo +
-          '/repos?order=created&sort=asc?access_token=' +
-          environment.Key
+            searchRepo +
+            '/repos?order=created&sort=asc?access_token=' +
+            environment.Key
         )
-      .toPromise()
+        .toPromise()
         .then(
           (response) => {
-            this.repository = response;
-            console.log(this.repository);
+            this.repos = response;
+            console.log(this.repos);
             resolve();
           },
           (err) => {
