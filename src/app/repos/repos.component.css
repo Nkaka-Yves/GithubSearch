@@ -1,0 +1,25 @@
+#repo {
+    margin-left: 160px;
+    margin-top: -50px;
+}
+
+#view {
+    margin-top: 40px;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    background: rgb(252, 252, 252);
+}
+
+#btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.card-footer button {
+    margin-left: 90px;
+}
+
+.head {
+    text-align: center;
+}
