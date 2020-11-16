@@ -10,6 +10,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgProgressHttpClientModule } from "@ngx-progressbar/http-client";
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { FormsModule } from "@angular/forms";
+import { HighlightDirective } from './highlight.directive';
+import { RepoDatePipe } from './repo-date.pipe';
 
 
 
@@ -19,7 +21,9 @@ import { FormsModule } from "@angular/forms";
     NavComponent,
     SearchFormComponent,
     UserComponent,
-    ReposComponent
+    ReposComponent,
+    HighlightDirective,
+    RepoDatePipe
   ],
   imports: [
     BrowserModule,
