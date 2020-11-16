@@ -1,1 +1,54 @@
+<div class="container user">
+    <div id="rotate">
+        <app-search-form (searched)="makeSearch($event)"></app-search-form>
+    </div>
+    <div class="row justify-content-center hg">
+        <div class="col-md-4">
+            <div class="container">
+                <img src="{{user.avatar_url}}" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="col-md-6" id="look">
+            <p class="username">
+                {{userInfo.name}}
+            </p>
+            <p>
+                <span><strong>Username:</strong> </span> {{userInfo.login}}
+            </p>
+            <p><strong>Repositories:</strong> {{userInfo.public_repos}}
+            </p>
+            <p>
+                <i class="fa fa-map-marker" id="fa" aria-hidden="true"></i>&nbsp;{{userInfo.location}}
+            </p>
+            <p><strong>Followers:</strong> {{userInfo.followers}}&nbsp; <strong>Following:</strong> {{userInfo.following}}
+            </p>
+            <p> <strong>Created on:</strong> {{userInfo.created_at | date}}
+            </p>
 
+        </div>
+        <div class="btn">
+            <button class="btn btn-success"><a href="{{user.html_url}}">Visit GitHub</a></button>
+
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1 class="head">List of Repositories</h1>
+        <hr>
+        <div class="container justify-content-center row">
+            <div class="card col-3 m-2" appHighlight *ngFor="let repository of repos" style="width: 22rem;">
+                <div class="card-body">
+                    <h5 class="title">{{repos.name}} </h5>
+                    <div class="card-text">
+                        <hr>
+                        <span>Description:</span> {{repos.description}}
+                        <hr>
+                        <span>Language: </span> {{repos.language}}&nbsp;&nbsp;{{repos.updated_at | repoDate}}
+                    </div>
+                </div>
+                <div class="card-footer" id="btn">
+                    <button class="btn btn btn-success"><a href="{{repos.html_url}}">Visit Repo</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
