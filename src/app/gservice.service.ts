@@ -9,35 +9,35 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class GserviceService {
- searchUser: UserInfo;
- repository: Repos;
+  searchUser: UserInfo;
+  repository: Repos;
 
   constructor(private http: HttpClient) {
-     this.searchUser = new UserInfo('','','',0,0,0,'',new Date(),'');
-     this.repository = new Repos('','','','',new Date());
+    this.searchUser = new UserInfo('', '', '', 0, 0, 0, '', new Date(), '');
+    this.repository = new Repos('', '', '', '', new Date());
 
-   }
+  }
 
-   findUser(searchUser: string){
-     interface apiResponse {
-        name:string;
-        login:string;
-        location:string;
-        public_repos: number;
-        followers:number;
-        following:number;
-        avatar_url:string;
-         created_at:Date;
-         html_url:string;
-        
+  findUser(searchUser: string) {
+    interface apiResponse {
+      name: string;
+      login: string;
+      location: string;
+      public_repos: number;
+      followers: number;
+      following: number;
+      avatar_url: string;
+      created_at: Date;
+      html_url: string;
+
     }
     return new Promise((resolve, reject) => {
       this.http
         .get<apiResponse>(
           'https://api.github.com/users/' +
-            searchUser +
-            '?access_token=' +
-            environment.Key
+          searchUser +
+          '?access_token=' +
+          environment.Key
         )
         .toPromise()
         .then(
@@ -67,11 +67,11 @@ export class GserviceService {
       this.http
         .get<apiResponse>(
           'https://api.github.com/users/' +
-            findRepo +
-            '/repos?order=created&sort=asc?access_token=' +
-            environment.Key
+          findRepo +
+          '/repos?order=created&sort=asc?access_token=' +
+          environment.Key
         )
-        .toPromise()
+      .toPromise()
         .then(
           (response) => {
             this.repository = response;
