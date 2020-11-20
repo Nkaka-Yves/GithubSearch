@@ -2,7 +2,7 @@
     <div id="rotate">
         <app-search-form (searched)="makeSearch($event)"></app-search-form>
     </div>
-    <div class="row justify-content-left ">
+    <div class="row justify-content-left " ng-container *ngIf="user">
         <div class="col-md-4 nkak">
             <div class="container">
                 <img src="{{user.avatar_url}}" alt="Avatar" class="image">
