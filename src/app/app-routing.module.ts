@@ -4,10 +4,9 @@ import { ReposComponent } from './repos/repos.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  { path: 'user', component: UserComponent },
+  { path: '', redirectTo: 'client', pathMatch: 'full'},
+  { path: 'client', component: UserComponent },
   { path: 'repos', component: ReposComponent },
-  { path: '', redirectTo: 'user', pathMatch: 'full'},
-
 ];
 
 @NgModule({
