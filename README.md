@@ -5,7 +5,7 @@
 This is a an app where you can search your github or others github and see their repository linked to github
 ## Setup/Installation Requirements
 * Open your browser
-* enter this link 
+* enter this link https://nkaka-yves.github.io/GithubSearch/
 * you will easily access the page
 ## Known Bugs
 No bugs every thing is set
