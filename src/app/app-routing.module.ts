@@ -4,8 +4,8 @@ import { ReposComponent } from './repos/repos.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'client', pathMatch: 'full'},
-  { path: 'client', component: UserComponent },
+ // { path: '', redirectTo: 'client', pathMatch: 'full'},
+  { path: '', component: UserComponent },
   { path: 'repos', component: ReposComponent },
 ];
 
