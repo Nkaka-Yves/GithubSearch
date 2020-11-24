@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Repos } from '../repos';
 import { UserInfo } from '../user-info';
 
@@ -28,12 +28,8 @@ export class ServiceService {
       html_url: string,
     }
     return new Promise((resolve, reject) => {
-      this.http
-        .get<apiResponse>(
-          'https://api.github.com/users/' +
-            searchUsername +
-            '?access_token=' +
-            environment.Key
+      this.http.get<apiResponse>(
+          'https://api.github.com/users/' +searchUsername +'?access_token=' +environment.Key
         )
         .toPromise()
         .then(
@@ -60,12 +56,8 @@ export class ServiceService {
     }
 
     return new Promise((resolve, reject) => {
-      this.http
-        .get<apiResponse>(
-          'https://api.github.com/users/' +
-            searchRepo +
-            '/repos?order=created&sort=asc?access_token=' +
-            environment.Key
+      this.http.get<apiResponse>(
+          'https://api.github.com/users/' +searchRepo +'/repos?order=created&sort=asc?access_token=' +environment.Key
         )
         .toPromise()
         .then(
